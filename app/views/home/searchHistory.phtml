@@ -1,0 +1,65 @@
+<div class="container">
+      
+
+        <div class="page-header">
+            <h3><?php echo $abc ?></h3>
+        </div>
+
+        <?php echo $this->getContent(); ?>
+
+        <div class="row">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                    <td align="center"><strong>No.</strong></td> 
+                    <td align="center"><strong>ชื่อกิจกรรม</strong></td> 
+                    </tr>
+                </thead>
+                <tbody>
+                <?php $i = 1; 
+                     if($data==1) {
+                        foreach ($page->items as $detailactivity): ?>
+
+                    <tr>
+                    <td align="center">
+                        <?php echo $i;  $i++ ?> 
+                    </td>
+                    <td>
+                        <?php 
+                        
+                        $Activity = Activity::findFirst(
+                            [
+                                "idActivity = '" . $detailactivity->idActivity . "'"  
+                            ]
+                        );
+                        echo $this->tag->linkTo(["home/detail/".$Activity->idActivity,$Activity->ActivityName,])
+                      
+                        ?>
+
+                    </td>
+ 
+                    </tr>
+                <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div> 
+
+        <div class="row">
+            <div class="col-sm-1">
+                <p class="pagination" style="line-height: 1.42857;padding: 6px 12px;">
+                    <?php echo $page->current, "/", $page->total_pages ?>
+                </p>
+            </div>
+            <div class="col-sm-11">
+                <nav>
+                    <ul class="pagination">
+                        <li><?php echo $this->tag->linkTo("detailactivity/search", "First") ?></li>
+                        <li><?php echo $this->tag->linkTo("detailactivity/search?page=" . $page->before, "Previous") ?></li>
+                        <li><?php echo $this->tag->linkTo("detailactivity/search?page=" . $page->next, "Next") ?></li>
+                        <li><?php echo $this->tag->linkTo("detailactivity/search?page=" . $page->last, "Last") ?></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <?php } ?>
+</div>

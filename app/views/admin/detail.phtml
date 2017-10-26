@@ -1,0 +1,62 @@
+<div class="container">
+  
+    <h1><p style="text-align : center">รายละเอียดกิจกรรม</p></h1><?php echo "<br>"; ?>
+    <div class="col-sm-5" class="display: inline-block">
+      <table>
+        <th><img class="img-responsive img-rounded" align="center" src="<?php echo $activity->picture;?>"
+          alt="" style="width:400px;height:300px";>
+        </th>
+      </table>
+    </div>
+    <div class="table-responsive" class="col-sm-7">
+        <table class="table table-bordered table-hover table-striped" align="center">
+          <tr class="something">
+            <td>ชื่อกิจกรรม  </td>
+            <td>
+              <?php echo $activity->ActivityName ; ?>
+            </td>
+          </tr>
+          <tr>
+            <td>รายละเอียด  </td>
+            <td>
+              <?php echo $activity->Detail ; ?>
+            </td>
+          </tr>
+          <tr>
+            <td>วันเริ่มกิจกรรม  </td>
+            <td><?php echo date('d/m/Y',strtotime($activity->StartDate));?>
+            </td>
+          </tr>
+          <tr>
+            <td>วันสิ้นสุดกิจกรรม  </td>
+            <td>
+              <?php echo date('d/m/Y',strtotime($activity->StartDate)); ?>
+            </td>
+          </tr>
+          <tr>
+            <td>ชั้นปีนักศึกษาที่เข้าร่วม  </td>
+            <td>
+              <?php echo $activity->YearSTD ; ?>
+            </td>
+          </tr>
+          <tr>
+            <td>สถานที่จัดกิจกรรม  </td>
+            <td>
+              <?php echo $location->room."  ".$location->LocationName ; ?>
+            </td>
+          </tr>
+          <tr>
+            <td>ประเภทกิจกรรม </td>
+            <td>
+              <?php echo $type->TypeName ; ?>
+            </td>
+          </tr>
+          <tr>
+            <td>เทอมในการจัดกิจกรรม </td>
+            <td>
+              <?php echo $activity->YearOfEducation_semeter."/".$activity->YearOfEducation_Year; ?>
+            </td>
+          </tr>
+        </table>
+    </div>
+</div>

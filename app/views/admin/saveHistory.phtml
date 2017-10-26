@@ -1,0 +1,92 @@
+  
+  <?php echo $this->flashSession->output() ?>
+<div class="container">
+        
+        <div class="page-header">
+            <h3><?php echo $activity->ActivityName ?></h3>
+        </div>
+
+        <?php echo $this->getContent(); ?>
+
+        <div class="row">
+            <table class="table table-bordered" >
+                <thead>
+                    <tr>
+                    <td align="center" ><strong>No.</strong></td> 
+                    <td align="center" ><strong>รหัสนักศึกษา</strong></td> 
+                    <td align="center" ><strong>ชื่อ-สกุล</strong></td> 
+                    </tr>
+                </thead>
+
+             <?php $i = 1; 
+                     if($data==1) {
+                       
+                        foreach ($students as $key => $std) {
+                        
+                      ?>
+
+                <tbody>
+                
+                    <tr>
+                    <td align="center" >
+                        <?php echo $i;  $i++ ?> 
+                    </td>
+                    <td align="center">
+                      <?php
+                           echo $std->idStudent;
+                        ?>
+                    </td>
+                    <td align="center">
+                      <?php
+                           echo "".$std->FirstName." ".$std->LastName;
+                        ?>
+                    </td> 
+                    </tr>
+            
+                </tbody>
+                 <?php }; }?>
+            </table>
+
+
+        </div> 
+
+    <!--insert id std  -->
+
+    
+        <?php
+          echo $this->tag->form(
+              [
+                  "admin/saveHis",
+                  "autocomplete" => "off",
+                  "class" => "form-horizontal"
+              ]
+          );
+        ?>
+
+        <div class="row">
+              <div class="col-md-12 col-md-offset-9">
+                  <div id="cover"></div>
+                    <input type="button" class="btn btn-default" id="btnAdd" value="เพิ่มข้อมูลนักศึกษา" />
+              </div>
+             <!--   <input type="text" name="idActivity" value="<?=$activity->idActivity ?>"  > -->
+
+                 <?php echo $this->tag->hiddenField(["idActivity", 
+                                  "value" => "$activity->idActivity"]) ?> 
+
+
+        </div>
+           <div class="row">
+            <div class="col-md-6 col-md-offset-9">
+
+              <input type="button" class="btn btn-primary" id="btnSend" value="บันทึกข้อมูล"/> 
+            </div>
+      </div>
+     <?php echo $this->tag->endForm(); ?>
+
+   
+          
+
+
+
+         
+</div>

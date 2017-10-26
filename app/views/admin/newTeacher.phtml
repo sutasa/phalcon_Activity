@@ -1,0 +1,97 @@
+<?php
+/**
+ * @var \Phalcon\Mvc\View\Engine\Php $this
+ */
+?>
+
+
+
+<div class="page-header">
+    <h1>
+        เพิ่มข้อมูลอาจารย์
+    </h1>
+</div>
+
+<?php echo $this->getContent(); ?>
+
+<?php
+    echo $this->tag->form(
+        [
+            "admin/createTeacher",
+            "autocomplete" => "off",
+            "class" => "form-horizontal"
+        ]
+    );
+?>
+
+<div class="form-group">
+    <label for="fieldNametitle" class="col-sm-2 control-label">คำนำหน้า</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["NameTitle", "size" => 30, "class" => "form-control", "id" => "fieldNametitle"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldUsername" class="col-sm-2 control-label">ชื่อผู้ใช้</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["username", "size" => 30, "class" => "form-control", "id" => "fieldUsername"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldPassword" class="col-sm-2 control-label">รหัสผ่าน</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["password", "size" => 30, "class" => "form-control", "id" => "fieldPassword"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldFirstname" class="col-sm-2 control-label">ชื่อ</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["FirstName", "size" => 30, "class" => "form-control", "id" => "fieldFirstname"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldLastname" class="col-sm-2 control-label">นามสกุล</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["LastName", "size" => 30, "class" => "form-control", "id" => "fieldLastname"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldPicture" class="col-sm-2 control-label">รูป</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["Picture", "size" => 30, "class" => "form-control", "id" => "fieldPicture"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldPhone" class="col-sm-2 control-label">เบอร์โทรศัพท์</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["Phone", "size" => 30, "class" => "form-control", "id" => "fieldPhone"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldMail" class="col-sm-2 control-label">E-Mail</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["Mail", "size" => 30, "class" => "form-control", "id" => "fieldMail"]) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldAdmin" class="col-sm-2 control-label">Admin</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["admin", "type" => "number", "class" => "form-control", "id" => "fieldAdmin"]) ?>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <?php echo $this->tag->submitButton(["บันทึก", "class" => "btn btn-default"]) ?>
+    </div>
+</div>
+
+<?php echo $this->tag->endForm(); ?>
