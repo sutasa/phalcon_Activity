@@ -26,42 +26,42 @@
 
 <div class="form-group">
     <label for="fieldActivityname" class="col-sm-2 control-label">ชื่อกิจกรรม</label>
-    <div class="col-sm-10">
+    <div class="col-sm-4">
         <?php echo $this->tag->textField(["ActivityName", "size" => 30, "class" => "form-control", "id" => "fieldActivityname"]) ?>
     </div>
 </div>
 
 <div class="form-group">
     <label for="fieldDetail" class="col-sm-2 control-label">รายละเอียด</label>
-    <div class="col-sm-10">
-        <?php echo $this->tag->textField(["Detail", "size" => 30, "class" => "form-control", "id" => "fieldDetail"]) ?>
+    <div class="col-sm-4">
+        <?php echo $this->tag->textarea(["Detail", "size" => 30, "class" => "form-control", "id" => "fieldDetail"]) ?>
     </div>
 </div>
 
 <div class="form-group">
     <label for="fieldStartdate" class="col-sm-2 control-label">วันเริ่มต้นกิจกรรม</label>
-    <div class="col-sm-10">
-        <?php echo $this->tag->textField(["StartDate", "size" => 30, "class" => "form-control", "id" => "fieldStartdate"]) ?>
+    <div class="col-sm-4">
+        <?php echo $this->tag->dateField(["StartDate", "size" => 30, "class" => "form-control", "id" => "fieldStartdate"]) ?>
     </div>
 </div>
 
 <div class="form-group">
     <label for="fieldEnddate" class="col-sm-2 control-label">วันสุดท้ายกิจกรรม</label>
-    <div class="col-sm-10">
-        <?php echo $this->tag->textField(["EndDate", "size" => 30, "class" => "form-control", "id" => "fieldEnddate"]) ?>
+    <div class="col-sm-4">
+        <?php echo $this->tag->dateField(["EndDate", "size" => 30, "class" => "form-control", "id" => "fieldEnddate"]) ?>
     </div>
 </div>
 
 <div class="form-group">
     <label for="fieldYearstd" class="col-sm-2 control-label">ชั้นปีนักศึกษา</label>
-    <div class="col-sm-10">
+    <div class="col-sm-4">
         <?php echo $this->tag->textField(["YearSTD", "size" => 30, "class" => "form-control", "id" => "fieldYearstd"]) ?>
     </div>
 </div>
 
 <div class="form-group">
     <label for="fieldLocaionIdlocaion" class="col-sm-2 control-label">สถานที่</label>
-    <div class="col-sm-10">
+    <div class="col-sm-4">
         <?php echo $this->tag->textField(["Locaion_idLocaion", "type" => "number", "class" => "form-control", "id" => "fieldLocaionIdlocaion"]) ?>
     </div>
 </div>
@@ -69,37 +69,38 @@
 
 <div class="form-group">
     <label for="fieldTypeIdtype" class="col-sm-2 control-label">ประเภภทกิจกรรม</label>
-    <div class="col-sm-10">
+    <div class="col-sm-4">
         <?php echo $this->tag->textField(["Type_idType", "type" => "number", "class" => "form-control", "id" => "fieldTypeIdtype"]) ?>
     </div>
 </div>
 
 <div class="form-group">
     <label for="fieldYearofeducationSemeter" class="col-sm-2 control-label">เทอม</label>
-    <div class="col-sm-10">
+    <div class="col-sm-4">
         <?php echo $this->tag->textField(["YearOfEducation_semeter", "type" => "number", "class" => "form-control", "id" => "fieldYearofeducationSemeter"]) ?>
     </div>
 </div>
 
 <div class="form-group">
     <label for="fieldYearofeducationYear" class="col-sm-2 control-label">ปีการศึกษา</label>
-    <div class="col-sm-10">
+    <div class="col-sm-4">
         <?php echo $this->tag->textField(["YearOfEducation_Year", "type" => "number", "class" => "form-control", "id" => "fieldYearofeducationYear"]) ?>
     </div>
 </div>
 
 <div class="form-group">
     <label for="fieldPicture" class="col-sm-2 control-label">รูปภาพ</label>
-    <div class="col-sm-10">
+    <div class="col-sm-4">
         <?php echo $this->tag->textField(["picture", "size" => 30, "class" => "form-control", "id" => "fieldPicture"]) ?>
     </div>
 </div>
 
 
 <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
+    <div class="col-sm-offset-2 col-sm-4">
         <?php echo $this->tag->submitButton(["สร้าง", "class" => "btn btn-default"]) ?>
     </div>
 </div>
+
 
 <?php echo $this->tag->endForm(); ?>
