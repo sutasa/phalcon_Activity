@@ -9,6 +9,16 @@
     {{ stylesheet_link('css/templete/flexslider.css') }} 
     {{ stylesheet_link('css/templete/prettyPhoto.css') }} 
     {{ stylesheet_link('css/templete/.style-ie.css') }} 
+    {{ javascript_include('js/jquery.min.js') }}
+    {{ javascript_include('js/jquery.custom.js') }}
+    {{ javascript_include('js/jquery.easing.1.3.js') }}
+    {{ javascript_include('js/jquery.flexslider.js') }}
+    {{ javascript_include('js/jquery.min.js') }}
+    {{ javascript_include('js/bootstrap.min.js') }}
+    {{ javascript_include('js/jquery.prettyPhoto.js') }}
+    {{ javascript_include('js/jquery.quiclsand.js') }}
+    {{ javascript_include('js/script.js') }}
+  
      
 <style>
   
@@ -49,16 +59,7 @@ background-attachment: fixed;
     <br>
     <br>
     
-  {{ javascript_include('js/jquery.min.js') }}
-  {{ javascript_include('js/jquery.custom.js') }}
-  {{ javascript_include('js/jquery.easing.1.3.js') }}
-  {{ javascript_include('js/jquery.flexslider.js') }}
-  {{ javascript_include('js/jquery.min.js') }}
-  {{ javascript_include('js/bootstrap.min.js') }}
-  {{ javascript_include('js/jquery.prettyPhoto.js') }}
-  {{ javascript_include('js/jquery.quiclsand.js') }}
-  {{ javascript_include('js/script.js') }}
-
+ 
 
 
 </body>

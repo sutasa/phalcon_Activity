@@ -9,6 +9,16 @@
     <?= $this->tag->stylesheetLink('css/templete/flexslider.css') ?> 
     <?= $this->tag->stylesheetLink('css/templete/prettyPhoto.css') ?> 
     <?= $this->tag->stylesheetLink('css/templete/.style-ie.css') ?> 
+    <?= $this->tag->javascriptInclude('js/jquery.min.js') ?>
+    <?= $this->tag->javascriptInclude('js/jquery.custom.js') ?>
+    <?= $this->tag->javascriptInclude('js/jquery.easing.1.3.js') ?>
+    <?= $this->tag->javascriptInclude('js/jquery.flexslider.js') ?>
+    <?= $this->tag->javascriptInclude('js/jquery.min.js') ?>
+    <?= $this->tag->javascriptInclude('js/bootstrap.min.js') ?>
+    <?= $this->tag->javascriptInclude('js/jquery.prettyPhoto.js') ?>
+    <?= $this->tag->javascriptInclude('js/jquery.quiclsand.js') ?>
+    <?= $this->tag->javascriptInclude('js/script.js') ?>
+  
      
 <style>
   
@@ -49,16 +59,7 @@ background-attachment: fixed;
     <br>
     <br>
     
-  <?= $this->tag->javascriptInclude('js/jquery.min.js') ?>
-  <?= $this->tag->javascriptInclude('js/jquery.custom.js') ?>
-  <?= $this->tag->javascriptInclude('js/jquery.easing.1.3.js') ?>
-  <?= $this->tag->javascriptInclude('js/jquery.flexslider.js') ?>
-  <?= $this->tag->javascriptInclude('js/jquery.min.js') ?>
-  <?= $this->tag->javascriptInclude('js/bootstrap.min.js') ?>
-  <?= $this->tag->javascriptInclude('js/jquery.prettyPhoto.js') ?>
-  <?= $this->tag->javascriptInclude('js/jquery.quiclsand.js') ?>
-  <?= $this->tag->javascriptInclude('js/script.js') ?>
-
+ 
 
 
 </body>

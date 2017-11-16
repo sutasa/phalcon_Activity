@@ -41,14 +41,14 @@
 <div class="form-group">
     <label for="fieldStartdate" class="col-sm-2 control-label">วันเริ่มต้นกิจกรรม</label>
     <div class="col-sm-4">
-        <?php echo $this->tag->dateField(["StartDate", "size" => 30, "class" => "form-control", "id" => "fieldStartdate"]) ?>
+        <?php echo $this->tag->dateField(["eStartdate", "size" => 30, "class" => "form-control", "id" => "eStartdate"  ]) ?>
     </div>
 </div>
 
 <div class="form-group">
     <label for="fieldEnddate" class="col-sm-2 control-label">วันสุดท้ายกิจกรรม</label>
     <div class="col-sm-4">
-        <?php echo $this->tag->dateField(["EndDate", "size" => 30, "class" => "form-control", "id" => "fieldEnddate"]) ?>
+        <?php echo $this->tag->dateField(["eEndDate", "size" => 30, "class" => "form-control", "id" => "eEnddate"]) ?>
     </div>
 </div>
 
@@ -106,3 +106,23 @@
 </div>
 
 <?php echo $this->tag->endForm(); ?>
+<script>
+
+    var dtToday = new Date();
+    
+    var month = dtToday.getMonth() + 1;
+    var day = dtToday.getDate();
+    var year = dtToday.getFullYear();
+    if(month < 10)
+        month = '0' + month.toString();
+    if(day < 10)
+        day = '0' + day.toString();
+    
+    var minDate = year + '-' + month + '-' + day;
+
+    $('#eStartdate').attr('min', minDate);
+    $('#eEnddate').attr('min', minDate);
+   
+
+
+</script>
