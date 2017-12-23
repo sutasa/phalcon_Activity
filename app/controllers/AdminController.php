@@ -87,8 +87,7 @@ class AdminController extends \Phalcon\Mvc\Controller
             $this->tag->setDefault("FirstName", $student->FirstName);
             $this->tag->setDefault("LastName", $student->LastName);
             $this->tag->setDefault("Year", $student->Year);
-            $this->tag->setDefault("Phone", $student->Phone);
-            $this->tag->setDefault("Mail", $student->Mail);
+
             
         }
     }
@@ -241,8 +240,6 @@ class AdminController extends \Phalcon\Mvc\Controller
             $this->tag->setDefault("password", $teacher->password);
             $this->tag->setDefault("FirstName", $teacher->FirstName);
             $this->tag->setDefault("LastName", $teacher->LastName);
-            $this->tag->setDefault("Phone", $teacher->Phone);
-            $this->tag->setDefault("Mail", $teacher->Mail);
             $this->tag->setDefault("admin", $teacher->admin);
             
         }

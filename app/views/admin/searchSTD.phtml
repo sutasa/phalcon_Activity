@@ -21,9 +21,6 @@
                 <th>ชื่อ</th>
                 <th>นามสกุล</th>
                 <th>ชั้นปี</th>
-                <th>โทรศัพท์</th>
-                <th>E-Mail</th>
-                
                 <th></th>
                
             </tr>
@@ -36,10 +33,6 @@
                 <td><?php echo $student->FirstName ?></td>
                 <td><?php echo $student->LastName ?></td>
                 <td><?php echo $student->Year ?></td>
-                
-                <td><?php echo $student->Phone ?></td>
-                <td><?php echo $student->Mail ?></td>
-
                 <td><?php echo $this->tag->linkTo(["admin/editSTD/" . $student->idStudent, '<img src="../public/img/edit.png">']); ?></td>
                 
             </tr>

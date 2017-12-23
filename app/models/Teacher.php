@@ -47,19 +47,7 @@ class Teacher extends \Phalcon\Mvc\Model
      */
     public $LastName;
 
-    /**
-     *
-     * @var string
-     * @Column(type="string", length=10, nullable=true)
-     */
-    public $Phone;
-
-    /**
-     *
-     * @var string
-     * @Column(type="string", length=45, nullable=true)
-     */
-    public $Mail;
+    
 
     /**
      *

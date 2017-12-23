@@ -42,20 +42,6 @@ class Student extends \Phalcon\Mvc\Model
     public $Year;
 
     /**
-     *
-     * @var string
-     * @Column(type="string", length=10, nullable=true)
-     */
-    public $Phone;
-
-    /**
-     *
-     * @var string
-     * @Column(type="string", length=45, nullable=true)
-     */
-    public $Mail;
-
-    /**
      * Initialize method for model.
      */
     public function initialize()

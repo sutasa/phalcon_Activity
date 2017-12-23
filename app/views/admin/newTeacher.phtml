@@ -60,30 +60,15 @@
 </div>
 
 <div class="form-group">
-    <label for="fieldPicture" class="col-sm-2 control-label">รูป</label>
-    <div class="col-sm-4">
-        <?php echo $this->tag->textField(["Picture", "size" => 30, "class" => "form-control", "id" => "fieldPicture"]) ?>
-    </div>
-</div>
-
-<div class="form-group">
-    <label for="fieldPhone" class="col-sm-2 control-label">เบอร์โทรศัพท์</label>
-    <div class="col-sm-4">
-        <?php echo $this->tag->textField(["Phone", "size" => 30, "class" => "form-control", "id" => "fieldPhone"]) ?>
-    </div>
-</div>
-
-<div class="form-group">
-    <label for="fieldMail" class="col-sm-2 control-label">E-Mail</label>
-    <div class="col-sm-4">
-        <?php echo $this->tag->textField(["Mail", "size" => 30, "class" => "form-control", "id" => "fieldMail"]) ?>
-    </div>
-</div>
-
-<div class="form-group">
     <label for="fieldAdmin" class="col-sm-2 control-label">Admin</label>
     <div class="col-sm-4">
-        <?php echo $this->tag->textField(["admin", "type" => "number", "class" => "form-control", "id" => "fieldAdmin"]) ?>
+        <?php echo $this->tag->selectStatic(["admin",
+              "class" => "form-control",
+              [
+                 1 => "Admin",
+                 0 => "Is not Admin",
+              ]
+         ]) ?>
     </div>
 </div>
 
