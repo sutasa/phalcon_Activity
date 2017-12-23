@@ -22,6 +22,7 @@
                 <th>นามสกุล</th>
                 <th>ชั้นปี</th>
                 <th></th>
+                <th></th>
                
             </tr>
         </thead>
@@ -34,7 +35,7 @@
                 <td><?php echo $student->LastName ?></td>
                 <td><?php echo $student->Year ?></td>
                 <td><?php echo $this->tag->linkTo(["admin/editSTD/" . $student->idStudent, '<img src="../public/img/edit.png">']); ?></td>
-                
+                <td><?php echo $this->tag->linkTo(["admin/editSTD/" . $student->idStudent, '<img src="../public/img/bin.png">']); ?></td>
             </tr>
         <?php endforeach; ?>
         </tbody>
