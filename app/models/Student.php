@@ -41,6 +41,13 @@ class Student extends \Phalcon\Mvc\Model
      */
     public $Year;
 
+     /**
+     *
+     * @var integer
+     * @Column(type="integer", length=1, nullable=false)
+     */
+    public $active;
+
     /**
      * Initialize method for model.
      */

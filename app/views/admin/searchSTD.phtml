@@ -27,7 +27,9 @@
             </tr>
         </thead>
         <tbody>
-        <?php foreach ($page->items as $student): ?>
+        <?php foreach ($page->items as $student): 
+                if($student->active == 1){
+        ?>
             <tr>
                 <td><?php echo $student->idStudent ?></td>
                 <td><?php echo $student->NameTitle ?></td>
@@ -35,9 +37,9 @@
                 <td><?php echo $student->LastName ?></td>
                 <td><?php echo $student->Year ?></td>
                 <td><?php echo $this->tag->linkTo(["admin/editSTD/" . $student->idStudent, '<img src="../public/img/edit.png">']); ?></td>
-                <td><?php echo $this->tag->linkTo(["admin/editSTD/" . $student->idStudent, '<img src="../public/img/bin.png">']); ?></td>
+                <td><?php echo $this->tag->linkTo(["admin/deleteSTD/" . $student->idStudent, '<img src="../public/img/bin.png">']); ?></td>
             </tr>
-        <?php endforeach; ?>
+        <?php }endforeach; ?>
         </tbody>
     </table>
 </div>

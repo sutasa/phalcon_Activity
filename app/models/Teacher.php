@@ -56,6 +56,13 @@ class Teacher extends \Phalcon\Mvc\Model
      */
     public $admin;
 
+     /**
+     *
+     * @var integer
+     * @Column(type="integer", length=1, nullable=false)
+     */
+    public $active;
+
     /**
      * Initialize method for model.
      */

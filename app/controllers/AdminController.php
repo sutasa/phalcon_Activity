@@ -114,9 +114,8 @@ class AdminController extends \Phalcon\Mvc\Controller
         $student->FirstName = $this->request->getPost("FirstName");
         $student->LastName = $this->request->getPost("LastName");
         $student->Year = $this->request->getPost("Year");
-        $student->Picture = $this->request->getPost("Picture");
-        $student->Phone = $this->request->getPost("Phone");
-        $student->Mail = $this->request->getPost("Mail");
+        $student->active = 1;
+    
         
 
         if (!$student->save()) {
@@ -156,11 +155,28 @@ class AdminController extends \Phalcon\Mvc\Controller
         }
     }
 
-    /**
-     * Deletes a student
-     *
-     * @param string $idStudent
-     */
+    public function deleteSTDAction($idStudent)
+    {
+        $student = Student::findFirst($idStudent);
+        if (!$student) {
+            $this->flash->error("teacher was not found");
+
+            $this->dispatcher->forward([
+                'controller' => "admin",
+                'action' => 'index'
+            ]);
+
+            return;
+        }
+        $student->active = 0;
+        $student->save();
+        
+
+        $this->flash->success("student was deleted successfully");
+
+        return $this->response->redirect("admin/searchSTD");
+    }
+
    
 
     // ----------------------teacher---------------------------------------------------
@@ -308,11 +324,7 @@ class AdminController extends \Phalcon\Mvc\Controller
     }
 
 
-    /**
-     * Deletes a teacher
-     *
-     * @param string $idTeacher
-     */
+  
     public function deleteTeacherAction($idTeacher)
     {
         $teacher = Teacher::findFirstByidTeacher($idTeacher);
@@ -327,26 +339,12 @@ class AdminController extends \Phalcon\Mvc\Controller
             return;
         }
 
-        if (!$teacher->delete()) {
-
-            foreach ($teacher->getMessages() as $message) {
-                $this->flash->error($message);
-            }
-
-            $this->dispatcher->forward([
-                'controller' => "admin",
-                'action' => 'searchTeacher'
-            ]);
-
-            return;
-        }
+       $teacher->active=0;
+       $teacher->save();
 
         $this->flash->success("teacher was deleted successfully");
 
-        $this->dispatcher->forward([
-            'controller' => "admin",
-            'action' => "index"
-        ]);
+        return $this->response->redirect("admin/searchTeacher");
     }
 
     //------------------------------------------------------ACTIVITY----------------------------------------------------------

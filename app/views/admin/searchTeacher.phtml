@@ -28,7 +28,9 @@
             </tr>
         </thead>
         <tbody>
-        <?php foreach ($page->items as $teacher): ?>
+        <?php foreach ($page->items as $teacher): 
+                if($teacher->active == 1){
+        ?>
             <tr>
                 <td><?php echo $teacher->username ?></td>
                 <td><?php echo $teacher->password ?></td>
@@ -49,7 +51,7 @@
                 <td><?php echo $this->tag->linkTo(["admin/deleteTeacher/" . $teacher->idTeacher, '<img src="../public/img/bin.png">']); ?></td>
                
             </tr>
-        <?php endforeach; ?>
+        <?php }endforeach; ?>
         </tbody>
     </table>
 </div>
