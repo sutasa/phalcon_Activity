@@ -158,20 +158,9 @@ class AdminController extends \Phalcon\Mvc\Controller
     public function deleteSTDAction($idStudent)
     {
         $student = Student::findFirst($idStudent);
-        if (!$student) {
-            $this->flash->error("teacher was not found");
-
-            $this->dispatcher->forward([
-                'controller' => "admin",
-                'action' => 'index'
-            ]);
-
-            return;
-        }
         $student->active = 0;
         $student->save();
         
-
         $this->flash->success("student was deleted successfully");
 
         return $this->response->redirect("admin/searchSTD");
@@ -328,19 +317,8 @@ class AdminController extends \Phalcon\Mvc\Controller
     public function deleteTeacherAction($idTeacher)
     {
         $teacher = Teacher::findFirstByidTeacher($idTeacher);
-        if (!$teacher) {
-            $this->flash->error("teacher was not found");
-
-            $this->dispatcher->forward([
-                'controller' => "admin",
-                'action' => 'index'
-            ]);
-
-            return;
-        }
-
-       $teacher->active=0;
-       $teacher->save();
+        $teacher->active=0;
+        $teacher->save();
 
         $this->flash->success("teacher was deleted successfully");
 
